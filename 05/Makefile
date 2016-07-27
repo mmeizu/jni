@@ -5,6 +5,7 @@ main:test.o
 	g++  $< $(LDFLAGS) -o $@
 %.o:%.cpp
 	gcc -c $(CPPFLAGS) $<
-
+%:%.cpp
+	g++ $(CPPFLAGS) $< $(LDFLAGS) -o $@
 clean:
 	@rm -fr test.o main
